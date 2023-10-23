@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "name": "test",
+      "setup": "python3 -m venv venv; source venv/bin/activate; python -m pip install --upgrade pip; python -m pip install markdown pytest;",
+      "run": "python -m pytest -v",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 100
+    },
+    {
+      "name": "other test",
+      "setup": "python3 -m venv venv; source venv/bin/activate; python -m pip install --upgrade pip; python -m pip install markdown pytest;echo 'import markdown \\ndef test_section_author(): \\n\\tmd_fp = \"README.md\" \\n\\twith open(md_fp,) as f: \\n\\t\\tmarkdown_string = f.read() \\n\\thtml_string = markdown.markdown(markdown_string,).lower() \\n\\tassert \"author\" in html_string[-300:]' > test_section.py",
+      "run": "python -m pytest",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    }
+  ]
+}
